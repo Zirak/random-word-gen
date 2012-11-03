@@ -4,7 +4,7 @@ var http = require( 'http' ),
 
 var template = '<cb>({word:"<word>"});';
 
-http.createServer( serverCb ).listen( process.env.port || 8080 );
+http.createServer( serverCb ).listen( process.env.PORT || 8080 );
 
 function serverCb ( req, resp ) {
 	var query = url.parse( req.url, true ).query;
