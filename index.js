@@ -2,7 +2,7 @@ var http = require( 'http' ),
 	url  = require( 'url' ),
 	rand = require( './randWord.js' );
 
-var template = '<cb>({word:"<word>"});';
+var template = '<cb>({"word": "<word>"});';
 
 http.createServer( serverCb ).listen( process.env.PORT || 8080 );
 
