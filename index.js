@@ -14,11 +14,15 @@ function serverCb ( req, resp ) {
 		word : rand.word()
 	};
 
+	respondWith( resp, supplant(template, replyObj) );
+}
+
+function respondWith ( resp, result ) {
 	resp.writeHeader(
 		200,
 		{ 'Content-Type' : 'application/javascript' } );
 
-	resp.write( supplant(template, replyObj) );
+	resp.write( result );
 	resp.end();
 }
 
